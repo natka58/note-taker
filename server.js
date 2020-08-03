@@ -13,6 +13,7 @@ app.use(express.json());
 
 //front end index.html path
 app.get('/', (req, res) => {
+
     console.log(__dirname);
     res.sendFile(path.join(__dirname + '/Develop/public/index.html'));
 
