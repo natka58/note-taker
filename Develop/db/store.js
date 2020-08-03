@@ -25,10 +25,10 @@ class Store {
             }
 
             return parseNotes;
-            });
+        });
     }
-    addNote(note){
-        const {title, text} = note;
+    addNote(note) {
+        const { title, text } = note;
 
         if (!title || !test) {
             throw new Error("Fill in note title and text");
@@ -37,15 +37,15 @@ class Store {
         const newNote = { title, text, id: uuidv1() };
 
         return this.getNotes()
-        .then(notes => [...notes, newNotes])
-        .then(updatenotes => this.write(updatedNotes))
-        .then(() => newNote);
+            .then(notes => [...notes, newNotes])
+            .then(updatenotes => this.write(updatedNotes))
+            .then(() => newNote);
     }
     removeNote(id) {
 
         return this.getNotes()
-        .then(notes => notes.filter(note => note.id !== id))
-        .then(filterredNotes = this.write(filteredNotes));
+            .then(notes => notes.filter(note => note.id !== id))
+            .then(filterredNotes = this.write(filteredNotes));
     }
 }
 
