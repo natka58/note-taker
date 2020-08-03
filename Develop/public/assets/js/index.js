@@ -59,7 +59,8 @@ var renderActiveNote = function() {
 var handleNoteSave = function() {
   var newNote = {
     title: $noteTitle.val(),
-    text: $noteText.val()
+    text: $noteText.val(),
+	id:(new Date()).getTime().toString(36)
   };
 
   saveNote(newNote).then(function(data) {
